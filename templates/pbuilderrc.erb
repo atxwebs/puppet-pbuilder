@@ -20,7 +20,7 @@ BASETGZ="<%= basetgz %>"
 BUILDPLACE="<%= builddir %>"
 BUILDRESULT="<%= resultdir %>"
 APTCACHE="<%= aptcachedir %>"
-APTCONFDIR="<%= aptconfdir %>"
+[ $(find <%= aptconfdir %> -type f | wc -l) -gt 0 ] && APTCONFDIR="<%= aptconfdir %>"
 HOOKDIR="<%= hookdir %>"
 
 DEBBUILDOPTS="<%= debbuildopts %>"
@@ -63,4 +63,4 @@ BUILDUSERID=1234
 DEBOOTSTRAPOPTS[0]='--variant=buildd'
 DEBOOTSTRAPOPTS[1]="--arch"
 DEBOOTSTRAPOPTS[2]="$ARCH"
-DEBOOTSTRAPOPTS[3]="--allow-unauthenticated"
+#DEBOOTSTRAPOPTS[3]="--allow-unauthenticated"
