@@ -29,8 +29,8 @@ case $OPERATION in
       ;;
 esac
 if ( $PROCEED == true ) then
-   shift 
-   sudo pbuilder $OPERATION \
+   shift
+   sudo /usr/sbin/pbuilder $OPERATION \
        --configfile $CONFIGDIR/$PBUILDERNAME/pbuilderrc \
        $@
 
